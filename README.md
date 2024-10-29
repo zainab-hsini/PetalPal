@@ -1,3 +1,77 @@
+# PetalPal: Your Plant Watering Tracker 🌱
+
+## Project Overview
+**PetalPal** is a plant care assistant application built with React to help track the watering schedules for various plants. Users can enter the name and planting date of each plant, and PetalPal will fetch watering frequency data from an external API and create a personalized calendar to highlight watering dates for the plants entered.
+
+This project was created to solve the semi-regular problem of remembering when to water different plants, especially for users with multiple plant species that require varying care schedules.
+
+## Features
+- **User Input for Plants**: Add a plant by name and planting date to begin tracking.
+- **API Integration**: PetalPal fetches plant information, including scientific name and watering frequency, from an external plant database.
+- **Watering Schedule Calculation**: Based on the planting date and watering frequency, PetalPal calculates all the watering dates for a year and highlights them on a calendar.
+- **Error Handling**: If no watering data is available for a plant, the app informs the user.
+
+## Getting Started
+
+### Prerequisites
+- Node.js and npm installed on your machine.
+- An API key from [Perenual](https://perenual.com/) to access plant data (replace `REACT_APP_API_KEY` in `.env`).
+
+### Installation and Setup
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/yourusername/PetalPal.git
+   ```
+2. Navigate into the project directory:
+   ```bash
+   cd PetalPal
+   ```
+3. Install dependencies:
+   ```bash
+   npm install
+   ```
+4. Set up your API key:
+   - Create a `.env` file in the root directory.
+   - Add your API key as follows:
+     ```plaintext
+     REACT_APP_API_KEY=your_api_key_here
+     ```
+5. Run the application:
+   ```bash
+   npm start
+   ```
+
+## How to Use the Application
+1. Enter the name of your plant in the **Plant Name** input field.
+2. Select the **Planting Date** when you planted the plant.
+3. Click **Add Plant**. The app will fetch the plant's scientific name, common name, and watering frequency from the Perenual API.
+4. The calendar will display all calculated watering dates based on the watering frequency provided by the API, with dates highlighted to indicate when each plant needs watering.
+
+## API Integration
+PetalPal uses the [Perenual API](https://perenual.com/docs/api) to retrieve plant details based on the plant name entered by the user. This includes:
+- **Scientific and Common Name**: Displayed on the UI for reference.
+- **Watering Frequency**: Used to calculate a year-long schedule of watering dates for each plant. This frequency is mapped as follows:
+  - **Frequent**: Every 2 days
+  - **Average**: Every 5 days
+  - **Minimum**: Every 10 days
+  - **None**: No watering information is available or no watering is needed for the plant
+
+## AI Assistance Credit
+Throughout development, I used ChatGPT to assist with:
+- Writing and explaining JavaScript functions, particularly the `calculateWateringDates` function for generating watering dates.
+- Structuring components and organizing the code for readability.
+- Handling date formatting for consistent highlighting on the calendar.
+- Error handling when fetching data from the API and generating user feedback messages.
+  
+All AI-generated code snippets were reviewed, modified, and understood before incorporation.
+
+## Future Enhancements
+- Add notifications or reminders for upcoming watering dates.
+- Allow users to customize the watering frequency if API data is unavailable.
+- Expand functionality to track sunlight requirements, fertilizing schedules, and other plant care needs.
+
+---
+
 # PetalPal
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
