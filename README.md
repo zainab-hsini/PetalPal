@@ -32,9 +32,10 @@ This project was created to solve the semi-regular problem of remembering when t
    ```
 4. Set up your API key:
    - Create a `.env` file in the root directory.
-   - Add your API key as follows:
+   - Add your API key and node options (if necessary) as follows:
      ```plaintext
      REACT_APP_API_KEY=your_api_key_here
+     NODE_OPTIONS=--openssl-legacy-provider
      ```
 5. Run the application:
    ```bash
